@@ -1,1 +1,1 @@
-console.log(1212)
+export * as init  from './init.js'
