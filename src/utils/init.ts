@@ -1,4 +1,4 @@
-import { Color } from '../types';
+import { Color } from "../types";
 
 interface Options {
   el: Element;
@@ -13,7 +13,7 @@ interface Response {
 }
 
 export default function (options: Options): Response {
-  const canvas = document.createElement('canvas');
+  const canvas = document.createElement("canvas");
 
   options.el.appendChild(canvas);
 
@@ -22,20 +22,23 @@ export default function (options: Options): Response {
     options.height ?? options.el.clientHeight,
   ];
 
-  Object.assign(canvas.style, { width: `${w}px`, height: `${h}px` });
+  Object.assign(canvas.style, {
+    width: `${w}px`,
+    height: `${h}px`,
+  });
 
   Object.assign(canvas, {
     width: w * devicePixelRatio,
     height: h * devicePixelRatio,
   });
 
-  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+  const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   ctx.scale(devicePixelRatio, devicePixelRatio);
 
   Object.assign(ctx, {
     imageSmoothingEnabled: true,
-    imageSmoothingQuality: 'high',
+    imageSmoothingQuality: "high",
   });
 
   if (options.backgroundColor) {

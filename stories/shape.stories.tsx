@@ -1,5 +1,5 @@
-export { default as Arc } from './components/shape.arc';
+export { default as Arc } from "./shape/shape.arc";
 
 export default {
-  title: 'Shape',
+  title: "Shape",
 };

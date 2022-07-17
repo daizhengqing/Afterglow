@@ -1,12 +1,14 @@
 // eslint-disable-next-line import/no-commonjs
 module.exports = {
   root: true,
-  extends: ['@modern-js-app'],
+  extends: ["@modern-js-app"],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['../tsconfig.json'],
+    project: ["../tsconfig.json"],
   },
   rules: {
-    'no-console': 'off',
+    "no-console": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
   },
 };
