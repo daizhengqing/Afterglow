@@ -1,5 +1,5 @@
 import { Style } from "@/types";
-import draw from "@/utils/draw";
+import useDrawer from "@/utils/useDrawer";
 
 interface Attributes {
   x: number;
@@ -22,14 +22,13 @@ const _createPath = (attrs: Attributes): Path2D => {
 
 export default function (
   ctx: CanvasRenderingContext2D,
-  attrs: Attributes,
-  style: Style
+  options: { attrs: Attributes; style: Style }
 ): Path2D {
-  console.log(attrs);
+  console.log(options.attrs);
 
-  const path = _createPath(attrs);
+  const path = _createPath(options.attrs);
 
-  draw(ctx, path, style);
+  useDrawer(ctx, path, options.style);
 
   return path;
 }

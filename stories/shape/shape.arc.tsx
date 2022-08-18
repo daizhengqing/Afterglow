@@ -1,12 +1,12 @@
-import init from "@/utils/init";
+import useCanvas from "@/utils/useCanvas";
 import useArc from "@/shape/useArc";
-import useEvent from "@/utils/event";
+import useEvent from "@/utils/useEvent";
 
 export default () => {
   window.onload = () => {
     const container = document.querySelector("#container") as HTMLElement;
 
-    const { canvas, ctx } = init({
+    const { canvas, ctx } = useCanvas({
       el: container,
       width: 800,
       height: 500,
@@ -17,20 +17,18 @@ export default () => {
 
     console.log(ctx.getContextAttributes());
 
-    const arc = useArc(
-      ctx,
-      {
+    const arc = useArc(ctx, {
+      attrs: {
         x: 200,
         y: 200,
         radius: 40,
         startAngle: 0,
         endAngle: 2 * Math.PI,
       },
-      {
-        hollow: false,
-        color: "#e56",
-      }
-    );
+      style: {
+        fill: "#e56",
+      },
+    });
 
     const paths = [arc];
 

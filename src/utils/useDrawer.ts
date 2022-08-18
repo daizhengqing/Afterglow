@@ -5,8 +5,8 @@ export const fill = (
   path: Path2D,
   style: Style
 ) => {
-  if (style.color) {
-    ctx.fillStyle = style.color;
+  if (style.fill) {
+    ctx.fillStyle = style.fill;
   }
 
   ctx.fill(path);
@@ -21,8 +21,8 @@ export const stroke = (
     ctx.lineWidth = style.border;
   }
 
-  if (style.color) {
-    ctx.strokeStyle = style.color;
+  if (style.borderColor) {
+    ctx.strokeStyle = style.borderColor;
   }
 
   if (style.dash) {
@@ -43,7 +43,13 @@ export default function (
 ) {
   ctx.save();
 
-  style.hollow ? stroke(ctx, path, style) : fill(ctx, path, style);
+  if (style.fill) {
+    fill(ctx, path, style);
+  }
+
+  if (style.border) {
+    stroke(ctx, path, style);
+  }
 
   ctx.restore();
 }

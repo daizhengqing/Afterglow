@@ -1,17 +1,11 @@
 export type Color = string | CanvasGradient | CanvasPattern;
 
-export interface Outline {
-  width?: number;
-  color?: Color;
-  dash?: [number, number];
-  dashOffset?: number;
-}
-
 export interface Style {
   border?: number;
-  color?: Color;
-  hollow?: boolean;
+  borderRadius?: number;
+  borderColor?: Color;
+  fill?: Color;
   dash?: [number, number];
   dashOffset?: number;
-  outline?: Outline[];
+  opacity?: number;
 }

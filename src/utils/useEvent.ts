@@ -35,7 +35,6 @@ export default function (ctx: CanvasRenderingContext2D, options: Options) {
     });
   }
 
-  console.log(events);
   events
     .get(options.trigger)
     .callbacks.push({ paths: options.paths, cb: options.cb });

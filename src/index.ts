@@ -1,9 +1,9 @@
-import init from "@/utils/init";
-import useEvent from "@/utils/event";
+import useCanvas from "@/utils/useCanvas";
+import useEvent from "@/utils/useEvent";
 import useArc from "@/shape/useArc";
 
 export default {
-  init,
+  useCanvas,
   useEvent,
   useArc,
 };
